@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Website</title>
+    <style>
+        .hidden {
+            display: none; /* Hides content */
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .content {
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Grid</title>
+    <style>
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 10px;
+            padding: 10px;
+        }
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px; /* Optional: for rounded corners */
+        }
+        @media (max-width: 600px) {
+            .image-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+    </style>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collapsible Tabs</title>
+  <style>
+      .collapsible {
+          background-color: #777;
+          color: white;
+          cursor: pointer;
+          padding: 18px;
+          width: 100%;
+          border: none;
+          text-align: left;
+          outline: none;
+          font-size: 15px;
+          transition: background-color 0.4s ease;
+      }
+
+      .active, .collapsible:hover {
+          background-color: #555;
+      }
+
+      .content {
+          padding: 0 18px;
+          display: none;
+          overflow: hidden;
+          background-color: #f1f1f1;
+          transition: max-height 0.2s ease-out;
+      }
+  </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Anirudh Chatterjee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap" rel="stylesheet">
+
+    
+  </head>
+  <body>
+
+	<div id="website-header">
+        <h1> Anirudh Chatterjee </h1>
+        <h2> This is my personal website </h2>
+        <img src = "BE_W24-073.jpg">
+    </div>
+    
+
+    <p> I hope that this website will help you learn a little bit more about me. 
+        I hope to use this as a platform to document and display some of my work 
+        and accomplishments. I hope you enjoy! </p>
+
+    <a href = "https://www.linkedin.com/in/anirudhchat/"> My Linkedin </a>
+
+    <a href = "Resume.docx.pdf"> My Resume </a>
+
+
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4FIju7MEPt6E7ziS392pMQ?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/T6eK-2OQtew?si=WygI9XlzKQqVcn42" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <div class="navbar">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+  </div>
+  
+  <div class="content" id="home">
+      <h1>Home Page</h1>
+      <p>Welcome to our website.</p>
+  </div>
+  
+  <div class="content" id="about" style="display:none;">
+      <h1>About Us</h1>
+      <p>Learn more about our company.</p>
+  </div>
+  
+  <div class="content" id="contact" style="display:none;">
+      <h1>Contact Us</h1>
+      <p>Get in touch with us.</p>
+  </div>
+
+  <div class="content hidden" id="about">
+    <h1>About Us</h1>
+    <p>Learn more about our company.</p>
+  </div>
+
+  <div class="content hidden" id="contact">
+    <h1>Contact Us</h1>
+    <p>Get in touch with us.</p>
+  </div>
+
+  <script>
+    function showSection(sectionId) {
+        // Hide all sections
+        document.querySelectorAll('.content').forEach(function(page) {
+            page.classList.add('hidden');
+        });
+
+        // Show the relevant section
+        document.getElementById(sectionId).classList.remove('hidden');
+    }
+  </script>
+
+  
+  <script>
+      document.querySelectorAll('.navbar a').forEach(link => {
+          link.addEventListener('click', function(e) {
+              e.preventDefault();
+              const targetId = e.target.getAttribute('href').substring(1);
+              document.querySelectorAll('.content').forEach(page => {
+                  page.style.display = 'none';
+              });
+              document.getElementById(targetId).style.display = 'block';
+          });
+      });
+  </script>
+
+  <div class="image-grid">
+    <div><img src="IMG_7885.jpeg" alt="My high school graduation."></div>
+    <div><img src="67A582F4-983D-4267-AC19-12C47A1B8A0D.jpg" alt="Me smiling"></div>
+    <div><img src="IMG_8753 2.jpeg" alt="Mugshot"></div>
+  </div>
+
+  <h2>Collapsible Tabs Example</h2>
+
+  <button class="collapsible">Personal Information</button>
+  <div class="content">
+      <p>My name is Anirudh Chatterjee. I was born in India on November 22, 2005. I grew up in Westwood.</p>
+  </div>
+
+  <button class="collapsible">Education</button>
+  <div class="content">
+      <p>I attend UCLA and currently am finishing my first year. I am double-majoring in Applied Mathematics and Economics.</p>
+  </div>
+
+  <button class="collapsible">Professional Goals</button>
+  <div class="content">
+      <p>I am currently very interested in entrepreneuership and investing. I am working on a few startup ideas and looking for ways to get more invovled.</p>
+  </div>
+
+  <script>
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+
+      for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+              this.classList.toggle("active");
+              var content = this.nextElementSibling;
+              if (content.style.display === "block") {
+                  content.style.display = "none";
+              } else {
+                  content.style.display = "block";
+              }
+          });
+      }
+  </script>
+
+  </body>
+</html>
